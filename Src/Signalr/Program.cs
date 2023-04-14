@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.Azure.Functions.Worker.Extensions.OpenApi.Extensions;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Abstractions;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Configurations;
@@ -7,11 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System;
-using System.IO;
 using System.Reflection;
 
-namespace Sendmail
+namespace Signalr
 {
     public class Program
     {
@@ -30,8 +27,8 @@ namespace Sendmail
                             Info = new OpenApiInfo()
                             {
                                 Version = "1.0.0",
-                                Title = "Poc Sendmail",
-                                Description = "Sendmail API",
+                                Title = "Poc Signalr",
+                                Description = "Signalr API",
                                 TermsOfService = new Uri("https://www.knightfrank.com/legals"),
                                 Contact = new OpenApiContact()
                                 {
