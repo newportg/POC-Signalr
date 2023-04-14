@@ -17,7 +17,7 @@ export class AppComponent {
   constructor() {
     // Create connection
     this.hubConnection = new SignalR.HubConnectionBuilder()
-      .withUrl("https://func-poc-sendmail-vse-ne.azurewebsites.net/api/")
+      .withUrl("https://func-poc-signalr-vse-ne.azurewebsites.net//api/")
       .configureLogging(SignalR.LogLevel.Debug)
       .build();
 
