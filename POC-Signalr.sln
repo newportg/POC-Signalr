@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{915901
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AzureResourceGroup", "Deploy\AzureResourceGroup\AzureResourceGroup.deployproj", "{D6A1359A-D78F-44B1-A296-941DD4990839}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Viewer-App", "Src\Viewer-App\Viewer-App.esproj", "{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,12 @@ Global
 		{D6A1359A-D78F-44B1-A296-941DD4990839}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6A1359A-D78F-44B1-A296-941DD4990839}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6A1359A-D78F-44B1-A296-941DD4990839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{78865FC2-F633-44D8-944F-3A8DB9C0987E} = {3019C6EB-B102-4546-88C4-3BB8C38422E1}
 		{D6A1359A-D78F-44B1-A296-941DD4990839} = {915901D9-673B-4378-BE34-AEBDECE13262}
+		{CD89C16D-ED32-4FF7-B73B-DE5B1190E25F} = {3019C6EB-B102-4546-88C4-3BB8C38422E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F73F7309-49E8-4591-B142-AAFA855BBAEE}
