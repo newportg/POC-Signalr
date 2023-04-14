@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signalr", "Src\Signalr\Signalr.csproj", "{78865FC2-F633-44D8-944F-3A8DB9C0987E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1D77D44F-A131-4D74-8EB1-445D30974C0B}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Build-Pipeline.yml = Build\Build-Pipeline.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{915901D9-673B-4378-BE34-AEBDECE13262}"
 EndProject
