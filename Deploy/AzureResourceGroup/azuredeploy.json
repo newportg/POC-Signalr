@@ -648,7 +648,7 @@
       "name": "[concat(variables('var_kv_name'), '/SRUrl')]",
       "properties": {
         "contentType": "text/plain",
-        "value": "[concat(listKeys(resourceId('Microsoft.SignalRService/SignalR', variables('var_sr_name')), '2020-05-01').ClientId)]"
+        "value": "[concat('https://',variables('var_sr_name'),'.service.signalr.net')]"
       },
       "tags": {
         "displayName": "Microsoft.KeyVault/vaults/secrets - SR Url",
@@ -656,7 +656,7 @@
         "project": "[parameters('para_application_name')]"
       },
       "type": "Microsoft.KeyVault/vaults/secrets"
-    }
+    },
     {
       "apiVersion": "2016-10-01",
       "dependsOn": [
@@ -666,7 +666,7 @@
       "name": "[concat(variables('var_kv_name'), '/MIClientId')]",
       "properties": {
         "contentType": "text/plain",
-        "value": "[[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('var_id_name'))]]"
+        "value": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('var_id_name'))).clientId]"
       },
       "tags": {
         "displayName": "Microsoft.KeyVault/vaults/secrets - MIClientId",

@@ -483,8 +483,12 @@
         "AzureStorageAcct": "[variables('var_str_name')]",
         "AzureStorageKey": "[concat(listKeys(variables('var_str_resId'),'2015-05-01-preview').key1) ]",
         "HubSqlConnection": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=HubSqlConnection)')]",
-        "AzureSignalRConnectionString": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=SRConnectionString)')]",
-        "SWADefaultHostName": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=SWADefaultHostName)')]"
+        //"AzureSignalRConnectionString": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=SRConnectionString)')]",
+        "SWADefaultHostName": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=SWADefaultHostName)')]",
+
+        "AzureSignalRConnectionString__serviceUri": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=SRUrl)')]",
+        "AzureSignalRConnectionString__credential": "managedidentity",
+        "AzureSignalRConnectionString__clientId": "[concat('@Microsoft.KeyVault(VaultName=', variables('var_kv_name'), ';SecretName=MIClientId)')]"
       },
       "tags": {
         "displayName": "[concat('Function Settings- ', variables('var_azf_name'))]",
@@ -616,19 +620,56 @@
       },
       "type": "Microsoft.KeyVault/vaults/secrets"
     },
+    //{
+    //  "apiVersion": "2016-10-01",
+    //  "dependsOn": [
+    //    "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
+    //    "[resourceId('Microsoft.SignalRService/SignalR', variables('var_sr_name'))]"
+    //  ],
+    //  "name": "[concat(variables('var_kv_name'), '/SRConnectionString')]",
+    //  "properties": {
+    //    "contentType": "text/plain",
+    //    "value": "[concat(listKeys(resourceId('Microsoft.SignalRService/SignalR', variables('var_sr_name')), '2020-05-01').primaryConnectionString)]"
+    //  },
+    //  "tags": {
+    //    "displayName": "Microsoft.KeyVault/vaults/secrets - SR ConnectionStringe",
+    //    "environment": "[parameters('para_target_env')]",
+    //    "project": "[parameters('para_application_name')]"
+    //  },
+    //  "type": "Microsoft.KeyVault/vaults/secrets"
+    //}
+
     {
       "apiVersion": "2016-10-01",
       "dependsOn": [
         "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
         "[resourceId('Microsoft.SignalRService/SignalR', variables('var_sr_name'))]"
       ],
-      "name": "[concat(variables('var_kv_name'), '/SRConnectionString')]",
+      "name": "[concat(variables('var_kv_name'), '/SRUrl')]",
       "properties": {
         "contentType": "text/plain",
-        "value": "[concat(listKeys(resourceId('Microsoft.SignalRService/SignalR', variables('var_sr_name')), '2020-05-01').primaryConnectionString)]"
+        "value": "[concat('https://',variables('var_sr_name'),'.service.signalr.net')]"
       },
       "tags": {
-        "displayName": "Microsoft.KeyVault/vaults/secrets - SR ConnectionStringe",
+        "displayName": "Microsoft.KeyVault/vaults/secrets - SR Url",
+        "environment": "[parameters('para_target_env')]",
+        "project": "[parameters('para_application_name')]"
+      },
+      "type": "Microsoft.KeyVault/vaults/secrets"
+    },
+    {
+      "apiVersion": "2016-10-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('var_id_name'))]"
+      ],
+      "name": "[concat(variables('var_kv_name'), '/MIClientId')]",
+      "properties": {
+        "contentType": "text/plain",
+        "value": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('var_id_name'))).clientId]"
+      },
+      "tags": {
+        "displayName": "Microsoft.KeyVault/vaults/secrets - MIClientId",
         "environment": "[parameters('para_target_env')]",
         "project": "[parameters('para_application_name')]"
       },
