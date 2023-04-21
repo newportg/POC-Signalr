@@ -337,71 +337,71 @@
       "location": "[resourceGroup().location]",
       "name": "[variables('var_kv_name')]",
       "properties": {
-        //"accessPolicies": [
-        //  //Add Hub-Sec-DevOps-Grp able to view it.
-        //  {
-        //    "tenantId": "[variables('var_ten_id')]",
-        //    "objectId": "339effdf-1ac9-44e9-b05c-3456907adaa8",
-        //    "permissions": {
-        //      "certificates": [
-        //        "Get",
-        //        "List",
-        //        "Update",
-        //        "Create",
-        //        "Import",
-        //        "Delete",
-        //        "Recover",
-        //        "ManageContacts",
-        //        "ManageIssuers",
-        //        "GetIssuers",
-        //        "ListIssuers",
-        //        "SetIssuers",
-        //        "DeleteIssuers"
-        //      ],
-        //      "keys": [
-        //        "Get",
-        //        "List",
-        //        "Update",
-        //        "Create",
-        //        "Import",
-        //        "Delete",
-        //        "Recover",
-        //        "Backup",
-        //        "Restore",
-        //        "Decrypt",
-        //        "Encrypt",
-        //        "UnwrapKey",
-        //        "WrapKey",
-        //        "Verify",
-        //        "Sign",
-        //        "Purge"
-        //      ],
-        //      "secrets": [
-        //        "Get",
-        //        "List",
-        //        "Set",
-        //        "Delete",
-        //        "Recover",
-        //        "Backup",
-        //        "Restore",
-        //        "Purge"
-        //      ]
-        //    }
-        //  }
-        //  //{
-        //  //  // Add Managed Identity 
-        //  //  "tenantId": "[variables('var_ten_id')]",
-        //  //  "objectId": "[variables('var_uaid_name')]",
-        //  //  "permissions": {
-        //  //    "certificates": [],
-        //  //    "keys": [],
-        //  //    "secrets": [
-        //  //      "Get",
-        //  //      "List"
-        //  //    ]
-        //  //  }
-        //  //}
-        //],
+        "accessPolicies": [
+          //Add Hub-Sec-DevOps-Grp able to view it.
+          {
+            "tenantId": "[variables('var_ten_id')]",
+            "objectId": "339effdf-1ac9-44e9-b05c-3456907adaa8",
+            "permissions": {
+              "certificates": [
+                "Get",
+                "List",
+                "Update",
+                "Create",
+                "Import",
+                "Delete",
+                "Recover",
+                "ManageContacts",
+                "ManageIssuers",
+                "GetIssuers",
+                "ListIssuers",
+                "SetIssuers",
+                "DeleteIssuers"
+              ],
+              "keys": [
+                "Get",
+                "List",
+                "Update",
+                "Create",
+                "Import",
+                "Delete",
+                "Recover",
+                "Backup",
+                "Restore",
+                "Decrypt",
+                "Encrypt",
+                "UnwrapKey",
+                "WrapKey",
+                "Verify",
+                "Sign",
+                "Purge"
+              ],
+              "secrets": [
+                "Get",
+                "List",
+                "Set",
+                "Delete",
+                "Recover",
+                "Backup",
+                "Restore",
+                "Purge"
+              ]
+            }
+          }
+          //{
+          //  // Add Managed Identity 
+          //  "tenantId": "[variables('var_ten_id')]",
+          //  "objectId": "[variables('var_uaid_name')]",
+          //  "permissions": {
+          //    "certificates": [],
+          //    "keys": [],
+          //    "secrets": [
+          //      "Get",
+          //      "List"
+          //    ]
+          //  }
+          //}
+        ],
         "enabledForDeployment": false,
         "enabledForDiskEncryption": false,
         "enabledForTemplateDeployment": true,
