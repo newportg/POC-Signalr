@@ -3,11 +3,12 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    //"AzureSignalRConnectionString": "Endpoint=https://sigr-poc-sendmail-vse-ne.service.signalr.net;AccessKey=RoShU2/g3xfWzqAxsOL1QYopA2tm3F53CtoNk9JJISs=;Version=1.0;",
+    //    "AzureSignalRConnectionString": "Endpoint=https://sigr-poc-signalr-vse-ne.service.signalr.net;AuthType=azure.msi;ClientId=6cefb8a9-1369-43da-9f76-0b1cbd28ddd3;Version=1.0;",
+    //"AzureSignalRConnectionString": "Endpoint=https://sigr-poc-signalr-vse-ne.service.signalr.net;AccessKey=b6KH7D3kzKxlxTrbQvq+btLFlpnWk+QEpy2TW8ahP/I=;Version=1.0;"
 
-    "AzureSignalRConnectionString__serviceUri": "https://https://sigr-poc-sendmail-vse-ne.service.signalr.net",
-    "AzureSignalRConnectionString__credential": "managedidentity",
-    "AzureSignalRConnectionString__clientId": "07bb09ab-009b-4ea3-a203-eec2e1164cbf"
+    "AzureSignalRConnectionString:serviceUri": "https://sigr-poc-signalr-vse-ne.service.signalr.net",
+    "AzureSignalRConnectionString:credential": "managedidentity",
+    "AzureSignalRConnectionString:clientId": "6cefb8a9-1369-43da-9f76-0b1cbd28ddd3"
   },
   "Host": {
     "CORS": "http://localhost:4200",

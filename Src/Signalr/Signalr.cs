@@ -22,8 +22,11 @@ namespace Signalr
         [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.InternalServerError, Description = "SignalR connection Issue")]
         public SignalRConnectionInfo Negotiate(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req,
-            [SignalRConnectionInfoInput(HubName = "HubValue", ConnectionStringSetting = "AzureSignalRConnectionString")] SignalRConnectionInfo connectionInfo)
+            [SignalRConnectionInfoInput(HubName = "HubValue")] SignalRConnectionInfo connectionInfo)
         {
+            _logger.LogInformation($"AzureSignalRConnectionString Connection URL = '{Environment.GetEnvironmentVariable("AzureSignalRConnectionString:serviceUri")}'");
+            _logger.LogInformation($"AzureSignalRConnectionString credential = '{Environment.GetEnvironmentVariable("AzureSignalRConnectionString:credential")}'");
+            _logger.LogInformation($"AzureSignalRConnectionString clientId = '{Environment.GetEnvironmentVariable("AzureSignalRConnectionString:clientId")}'");
             _logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
             return connectionInfo;
         }
