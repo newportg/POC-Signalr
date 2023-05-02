@@ -24,9 +24,6 @@ namespace Signalr
             [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req,
             [SignalRConnectionInfoInput(HubName = "HubValue", ConnectionStringSetting = "AzureSignalRConnectionString")] SignalRConnectionInfo connectionInfo)
         {
-            _logger.LogInformation($"AzureSignalRConnectionString Connection URL = '{Environment.GetEnvironmentVariable("AzureSignalRConnectionString:serviceUri")}'");
-            _logger.LogInformation($"AzureSignalRConnectionString credential = '{Environment.GetEnvironmentVariable("AzureSignalRConnectionString:credential")}'");
-            _logger.LogInformation($"AzureSignalRConnectionString clientId = '{Environment.GetEnvironmentVariable("AzureSignalRConnectionString:clientId")}'");
             _logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
             return connectionInfo;
         }

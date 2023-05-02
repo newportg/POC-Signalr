@@ -1,0 +1,1 @@
+C:\Users\NEWPORTG\source\Personal\Azure Functions\POC-Signalr\Deploy\IdentityPermissions\obj\Debug\IdentityPermissions.deployproj.CoreCompileInputs.cache
