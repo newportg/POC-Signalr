@@ -4,7 +4,6 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
 
-    //"AzureSignalRConnectionString": "Endpoint=https://sigr-poc-signalr-vse-ne.service.signalr.net;AccessKey=b6KH7D3kzKxlxTrbQvq+btLFlpnWk+QEpy2TW8ahP/I=;Version=1.0;"
     "AzureSignalRConnectionString": "Endpoint=https://sigr-poc-signalr-vse-ne.service.signalr.net;AuthType=azure.msi;ClientId=2406551d-8032-4d59-b72d-867c91f41ec1;Version=1.0;"
   },
   "Host": {
